@@ -1,8 +1,9 @@
+#include "constants.h"
 #include <helpers/helpers.h>
 
 int main(int argc, char** argv)
 {
-    HELPERS_INIT("Starfield", 800, 600);
+    HELPERS_INIT("Starfield", WINDOW_WIDTH, WINDOW_HEIGHT);
 
     bool quit = false;
     while (!quit)
