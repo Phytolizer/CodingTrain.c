@@ -8,7 +8,7 @@
 /// Places `window` and `renderer` in the current scope.
 ///
 /// Returns from the function with a value of 1 if initialization fails.
-#define HELPERS_INIT(Title, Width, Height)                                                                             \
+#define HELPERS_INIT(Title, Width, Height, Flags)                                                                      \
     SDL_Window* window;                                                                                                \
     SDL_Renderer* renderer;                                                                                            \
     do                                                                                                                 \
@@ -19,7 +19,7 @@
             return 1;                                                                                                  \
         }                                                                                                              \
         window = SDL_CreateWindow(Title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Width, Height,              \
-                                  SDL_WINDOW_SHOWN);                                                                   \
+                                  SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | Flags);                                \
         if (window == NULL)                                                                                            \
         {                                                                                                              \
             printf("SDL_CreateWindow Error: %s\n", SDL_GetError());                                                    \

@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv)
 {
-    HELPERS_INIT("Starfield", WINDOW_WIDTH, WINDOW_HEIGHT);
+    HELPERS_INIT("Starfield", WINDOW_WIDTH, WINDOW_HEIGHT, 0);
 
     bool quit = false;
     while (!quit)
