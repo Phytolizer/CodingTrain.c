@@ -2,9 +2,7 @@
 
 int main(int argc, char** argv)
 {
-    SDL_Window* window;
-    SDL_Renderer* renderer;
-    HELPERS_INIT("Starfield", 800, 600, window, renderer);
+    HELPERS_INIT("Starfield", 800, 600);
 
     bool quit = false;
     while (!quit)

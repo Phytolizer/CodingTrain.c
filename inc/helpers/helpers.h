@@ -3,7 +3,9 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define HELPERS_INIT(Title, Width, Height, WindowName, RendererName)                                                   \
+#define HELPERS_INIT(Title, Width, Height)                                                                             \
+    SDL_Window* window;                                                                                                \
+    SDL_Renderer* renderer;                                                                                            \
     do                                                                                                                 \
     {                                                                                                                  \
         if (SDL_Init(SDL_INIT_VIDEO) != 0)                                                                             \
@@ -11,15 +13,15 @@
             printf("SDL_Init Error: %s\n", SDL_GetError());                                                            \
             return 1;                                                                                                  \
         }                                                                                                              \
-        WindowName = SDL_CreateWindow(Title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Width, Height,          \
-                                      SDL_WINDOW_SHOWN);                                                               \
+        window = SDL_CreateWindow(Title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Width, Height,              \
+                                  SDL_WINDOW_SHOWN);                                                                   \
         if (window == NULL)                                                                                            \
         {                                                                                                              \
             printf("SDL_CreateWindow Error: %s\n", SDL_GetError());                                                    \
             SDL_Quit();                                                                                                \
             return 1;                                                                                                  \
         }                                                                                                              \
-        RendererName = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);           \
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);               \
         if (renderer == NULL)                                                                                          \
         {                                                                                                              \
             printf("SDL_CreateRenderer Error: %s\n", SDL_GetError());                                                  \
