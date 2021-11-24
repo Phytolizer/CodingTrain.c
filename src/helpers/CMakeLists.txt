@@ -1,14 +1,14 @@
 add_library(
     "helpers"
-    INTERFACE
+    "random.c"
 )
 target_include_directories(
     "helpers"
-    INTERFACE
+    PUBLIC
     "${PROJECT_SOURCE_DIR}/inc"
 )
 target_link_libraries(
     "helpers"
-    INTERFACE
+    PUBLIC
     "SDL2-static"
 )
