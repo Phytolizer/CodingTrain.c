@@ -3,6 +3,11 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+/// Initialize a window and renderer with SDL.
+///
+/// Places `window` and `renderer` in the current scope.
+///
+/// Returns from the function with a value of 1 if initialization fails.
 #define HELPERS_INIT(Title, Width, Height)                                                                             \
     SDL_Window* window;                                                                                                \
     SDL_Renderer* renderer;                                                                                            \
@@ -31,6 +36,9 @@
         }                                                                                                              \
     } while (false)
 
+/// Clean up after a prior call to `HELPERS_INIT`.
+///
+/// `window` and `renderer` must exist in the current scope.
 #define HELPERS_CLEANUP()                                                                                              \
     do                                                                                                                 \
     {                                                                                                                  \
