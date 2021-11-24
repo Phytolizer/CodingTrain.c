@@ -1,0 +1,14 @@
+add_library(
+    "helpers"
+    INTERFACE
+)
+target_include_directories(
+    "helpers"
+    INTERFACE
+    "${PROJECT_SOURCE_DIR}/inc"
+)
+target_link_libraries(
+    "helpers"
+    INTERFACE
+    "SDL2-static"
+)
