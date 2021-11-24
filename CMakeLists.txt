@@ -27,6 +27,11 @@ macro(
     WIN32
     ${ARGN}
   )
+  target_compile_features(
+    ${NAME}
+    PRIVATE
+    c_std_11
+  )
   target_include_directories(
     ${NAME}
     PRIVATE
