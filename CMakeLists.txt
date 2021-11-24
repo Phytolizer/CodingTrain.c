@@ -39,14 +39,21 @@ macro(
   )
   target_link_libraries(
     ${NAME}
+    PRIVATE
     "SDL2-static"
   )
   if(WIN32)
     target_link_libraries(
       ${NAME}
+      PRIVATE
       "SDL2main"
     )
   endif()
+  target_link_libraries(
+    ${NAME}
+    PRIVATE
+    "helpers"
+  )
 endmacro()
 
 add_subdirectory("src")

@@ -1,5 +1,6 @@
 add_library(
   "helpers"
+  "math.c"
   "random.c"
 )
 target_compile_features(
